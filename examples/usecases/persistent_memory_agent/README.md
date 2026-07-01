@@ -41,19 +41,24 @@ python main.py
 
 ## MCP tools available
 
-Once connected, your agent has access to 14 Dakera tools:
+Key Dakera tools exposed via MCP:
 
 | Tool | Purpose |
 |------|---------|
 | `dakera_store` | Persist a memory entry |
 | `dakera_recall` | Semantic recall (decay-weighted) |
 | `dakera_search` | Hybrid BM25 + vector search |
+| `dakera_batch_recall` | Recall across multiple queries at once |
 | `dakera_session_start` | Begin a named session |
 | `dakera_session_end` | Close a session |
+| `dakera_session_memories` | Retrieve all memories in a session |
 | `dakera_extract_entities` | NER → knowledge graph |
 | `dakera_knowledge_graph` | Query entity relationships |
 | `dakera_forget` | Delete specific memories |
 | `dakera_consolidate` | Deduplicate related memories |
+| `dakera_memory_get` | Fetch a specific memory by ID |
+| `dakera_memory_update` | Update an existing memory |
+| `dakera_memory_feedback` | Signal memory quality for adaptive ranking |
 
 ## Config
 
