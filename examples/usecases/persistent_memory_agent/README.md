@@ -14,15 +14,15 @@ Demonstrates cross-session memory using [Dakera](https://dakera.ai) MCP — a se
 
 ```bash
 # 1. Start Dakera (local Docker — no external API needed)
-docker run -d -p 3000:3000 \
+docker run -d -p 3300:3300 \
     -e DAKERA_API_KEY=demo \
-    dakera/dakera:latest
+    ghcr.io/dakera-ai/dakera:latest
 
 # 2. Verify the MCP server starts
 npx @dakera-ai/dakera-mcp --help
 
 # 3. Set env vars
-export DAKERA_API_URL=http://localhost:3000
+export DAKERA_API_URL=http://localhost:3300
 export DAKERA_API_KEY=demo
 export ANTHROPIC_API_KEY=your-key
 ```

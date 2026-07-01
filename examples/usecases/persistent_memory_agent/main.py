@@ -6,17 +6,17 @@ Demonstrates the three memory tiers discussed in issue #12:
   - Long-term:   Dakera dakera_recall (semantic search, decay-weighted)
 
 Prereq:
-    docker run -d -p 3000:3000 \\
+    docker run -d -p 3300:3300 \\
         -e DAKERA_API_KEY=demo \\
-        dakera/dakera:latest
+        ghcr.io/dakera-ai/dakera:latest
     npx @dakera-ai/dakera-mcp --help  # confirms the MCP server starts
 
 Usage:
     # First run: research and store
-    DAKERA_API_URL=http://localhost:3000 DAKERA_API_KEY=demo python main.py
+    DAKERA_API_URL=http://localhost:3300 DAKERA_API_KEY=demo python main.py
 
     # Second run: notice the agent recalls prior findings from Dakera
-    DAKERA_API_URL=http://localhost:3000 DAKERA_API_KEY=demo python main.py
+    DAKERA_API_URL=http://localhost:3300 DAKERA_API_KEY=demo python main.py
 """
 
 import asyncio
