@@ -62,4 +62,4 @@ Key Dakera tools exposed via MCP:
 
 ## Config
 
-See `mcp_agent.config.yaml`. The Dakera MCP server runs via `uvx dakera-mcp` (npm: `@dakera-ai/dakera-mcp`).
+See `mcp_agent.config.yaml`. The Dakera MCP server runs via `npx @dakera-ai/dakera-mcp`.
