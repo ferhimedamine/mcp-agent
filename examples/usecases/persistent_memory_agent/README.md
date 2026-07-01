@@ -19,7 +19,7 @@ docker run -d -p 3000:3000 \
     dakera/dakera:latest
 
 # 2. Verify the MCP server starts
-uvx dakera-mcp --help
+npx @dakera-ai/dakera-mcp --help
 
 # 3. Set env vars
 export DAKERA_API_URL=http://localhost:3000

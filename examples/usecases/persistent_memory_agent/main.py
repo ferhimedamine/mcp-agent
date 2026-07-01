@@ -9,7 +9,7 @@ Prereq:
     docker run -d -p 3000:3000 \\
         -e DAKERA_API_KEY=demo \\
         dakera/dakera:latest
-    uvx dakera-mcp  # confirms the MCP server starts
+    npx @dakera-ai/dakera-mcp --help  # confirms the MCP server starts
 
 Usage:
     # First run: research and store

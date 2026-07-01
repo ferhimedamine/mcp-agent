@@ -14,8 +14,8 @@ mcp:
   servers:
     dakera:
       transport: stdio
-      command: "uvx"
-      args: ["dakera-mcp"]
+      command: "npx"
+      args: ["-y", "@dakera-ai/dakera-mcp"]
       env:
         DAKERA_API_URL: "${DAKERA_API_URL}"
         DAKERA_API_KEY: "${DAKERA_API_KEY}"
