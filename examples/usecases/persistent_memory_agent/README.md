@@ -52,17 +52,18 @@ run stored before adding anything new.
 ## Prerequisites
 
 ```bash
-# 1. Start Dakera (local Docker — no external API needed)
-docker run -d -p 3300:3300 \
-    -e DAKERA_API_KEY=demo \
-    ghcr.io/dakera-ai/dakera:latest
+# 1. Start Dakera locally (self-hosted server + MinIO object store) via docker-compose.
+#    The server needs the object store the compose provisions, so use dakera-deploy
+#    rather than a bare `docker run`.
+git clone https://github.com/dakera-ai/dakera-deploy
+cd dakera-deploy && docker compose up -d   # REST API on http://localhost:3000
 
 # 2. Verify the MCP server starts
 npx @dakera-ai/dakera-mcp --help
 
-# 3. Set env vars
-export DAKERA_API_URL=http://localhost:3300
-export DAKERA_API_KEY=demo
+# 3. Set env vars (API key is the one configured in dakera-deploy, e.g. dk-...)
+export DAKERA_API_URL=http://localhost:3000
+export DAKERA_API_KEY=dk-...
 export ANTHROPIC_API_KEY=your-key
 ```
 

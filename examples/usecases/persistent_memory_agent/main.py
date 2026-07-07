@@ -26,18 +26,18 @@ misses, and which this example demonstrates end to end:
   * entity / knowledge-graph memory — `dakera_extract_entities` +
     `dakera_knowledge_graph` turn stored prose into a queryable entity graph.
 
-Prereq:
-    docker run -d -p 3300:3300 \\
-        -e DAKERA_API_KEY=demo \\
-        ghcr.io/dakera-ai/dakera:latest
+Prereq (self-hosted server + MinIO via docker-compose; the server needs the
+object store the compose provisions, so use dakera-deploy, not a bare docker run):
+    git clone https://github.com/dakera-ai/dakera-deploy
+    cd dakera-deploy && docker compose up -d   # REST API on http://localhost:3000
     npx @dakera-ai/dakera-mcp --help  # confirms the MCP server starts
 
 Usage:
     # First run: research and promote typed facts to project memory
-    DAKERA_API_URL=http://localhost:3300 DAKERA_API_KEY=demo python main.py
+    DAKERA_API_URL=http://localhost:3000 DAKERA_API_KEY=dk-... python main.py
 
     # Second run: a fresh agent recalls prior *accepted* facts by scope
-    DAKERA_API_URL=http://localhost:3300 DAKERA_API_KEY=demo python main.py
+    DAKERA_API_URL=http://localhost:3000 DAKERA_API_KEY=dk-... python main.py
 """
 
 import asyncio
